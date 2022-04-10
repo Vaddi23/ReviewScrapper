@@ -25,7 +25,7 @@ def index():
             bigboxes = flipkart_html.findAll("div", {"class": "_1AtVbE col-12-12"})
             del bigboxes[0:3]
             box = bigboxes[0]
-            productLink = "https://www.flipkart.com" + box.div.div.div.a['href']
+            productLink = "https://www.flipkart.com" + box.div.div.a['href']
             prodRes = requests.get(productLink)
             prodRes.encoding='utf-8'
             prod_html = bs(prodRes.text, "html.parser")
